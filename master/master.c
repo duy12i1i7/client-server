@@ -4,6 +4,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <pthread.h>
+#include <unistd.h>
 
 #define NUM_WORKERS 3
 #define PORT 8888
