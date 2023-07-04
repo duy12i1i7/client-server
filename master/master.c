@@ -53,21 +53,25 @@ int main(int argc,char **argv) {
          sizeof(server_addr));
 
     /* Lắng nghe kết nối từ client */
+    printf("Listening client machine ...\n");
     listen(server_sock, NUM_WORKERS);
 
     /* Chấp nhận kết nối từ client */
     for (int i = 0; i < NUM_WORKERS; i++) {
         client_sock[i] = accept(server_sock, NULL, NULL);
+        printf("Client %d connected\n", i+1);
     }
 
     /* Gửi công việc cho các worker */
     for (int i = 0; i < NUM_WORKERS; i++) {
         send_data(client_sock[i], matrix[i * 3], sizeof(int) * 9 * 3);
+        printf("Sent work to client %d\n", i+1);
     }
 
     /* Nhận kết quả từ các worker */
     for (int i = 0; i < NUM_WORKERS; i++) {
         recv_data(client_sock[i], &result, sizeof(int));
+        printf("Received result from client %d is: %d\n", i+1, result);
         total_sum += result;
         close(client_sock[i]);
     }

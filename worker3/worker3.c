@@ -48,12 +48,17 @@ int main(int argc,char **argv) {
     /* Kết nối đến server */
     connect(sock, (struct sockaddr *)&server_addr,
             sizeof(server_addr));
+    printf("Connected to server!\n");
 
     /* Nhận công việc từ master */
     for (int i = 0; i < 3; i++) {
         recv_data(sock, work, sizeof(int) * 9);
         result += do_work(work, 9);
     }
+
+    // In ket qua ra man hinh
+    printf("Result: %d\n", result);
+
 
     /* Gửi kết quả về cho master */
     send_data(sock, &result, sizeof(int));
