@@ -72,7 +72,7 @@ After that, To use this project, follow these steps:
 
 The matrix data is stored in the `master` directory. If you want to use a different matrix, you can edit the `matrix.txt` file. 
 
-Please don't forget that the matrix size is `9x9.`
+Please don't forget that the matrix size is `9x9`.
 
 ### Opening the machine
 
