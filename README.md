@@ -60,7 +60,7 @@ This problem aims to calculate the sum of the elements of a 9x9 matrix using the
 On each `worker` and `master` folder, the execution file will be created. If you want to edit the configuration file for a different result, you can recreate the execution file using this command:
 
 
-    gcc $(file.c) -o (execute_file) -lpthread
+    gcc (file.c) -o (execute_file) -lpthread
 
 In which, `-lpthread` is an option of the `gcc` or `g++` compiler to link the program with the libpthread library. The `libpthread` library provides functions and data structures to create and manage `threads` in the program.
 
@@ -78,7 +78,7 @@ Please don't forget that the matrix size is `9x9`.
 
 To run each machine, please open four terminals. On each terminal, run each machine by using this command:
 
-     ./$(execute_file)
+     ./(execute_file)
 
 #### Please note that you must run the `master` before running the `workers`.
 
